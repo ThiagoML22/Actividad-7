@@ -1,0 +1,102 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+
+.header { background: #1a2b3c; }
+.menu { background: #e74c3c; }
+.hero { background: #3498db; }
+.main { background: #2c3e50; }
+.banner { background: #f1c40f; }
+.extra { background: #16a085; }
+.image { background: #95a5a6; }
+
+.header, .menu, .hero, .main, .banner, .extra, .image {
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+/* celulares */
+@media (max-width: 600px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .header { grid-area: header; }
+    .menu { grid-area: menu; }
+    .hero { grid-area: hero; }
+    .main { grid-area: main; }
+    .banner { grid-area: banner; }
+    .extra { grid-area: extra; }
+    .image { grid-area: image; }
+
+    .container {
+        grid-template-areas: 
+            "header"
+            "menu"
+            "hero"
+            "main"
+            "banner"
+            "extra"
+            "image";
+    }
+}
+
+/* tablet */
+@media (min-width: 601px) and (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .header { grid-area: header; }
+    .menu { grid-area: menu; }
+    .hero { grid-area: hero; }
+    .main { grid-area: main; }
+    .banner { grid-area: banner; }
+    .extra { grid-area: extra; }
+    .image { grid-area: image; }
+
+    .container {
+        grid-template-areas: 
+            "header header "
+            "hero hero "
+            "menu main "
+            "menu banner"
+            "extra image";
+    }
+}
+
+/* escritorio */
+@media (min-width: 993px) {
+    .container {
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .header { grid-area: header; }
+    .menu { grid-area: menu; }
+    .hero { grid-area: hero; }
+    .main { grid-area: main; }
+    .banner { grid-area: banner; }
+    .extra { grid-area: extra; }
+    .image { grid-area: image; }
+
+    .container {
+        grid-template-areas: 
+            "header header menu"
+            "hero hero hero"
+            "main main image"
+            "banner banner banner"
+            "extra extra extra";
+    }
+}
